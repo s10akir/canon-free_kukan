@@ -106,3 +106,6 @@ node_modules/
 # ignore RubyMine configs
 .idea/
 
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
