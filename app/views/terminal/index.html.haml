@@ -1,1 +1,16 @@
-%h1 Hello Terminal!
+%h1 Free空間
+%p いらっしゃいませ。会員カードをスキャンして、「利用手続き開始」を押してください。
+
+= form_with(url: terminal_login_path, local: true) do |f|
+  = f.text_field 'id_1', size: 4, maxlength: 4
+  \-
+  = f.text_field 'id_2', size: 4, maxlength: 4
+  \-
+  = f.text_field 'id_3', size: 4, maxlength: 4
+  \-
+  = f.text_field 'id_4', size: 4, maxlength: 4
+
+  = f.submit '利用手続き開始'
+
+
+= params[:flash]
