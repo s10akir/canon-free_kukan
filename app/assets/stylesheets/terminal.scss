@@ -1,3 +1,29 @@
 // Place all the styles related to the terminal controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@font-face {
+  font-family: 'Kosugi Maru';
+  src: font-url('KosugiMaru-Regular.ttf')
+}
+
+html {
+  font-size: 16pt;
+}
+
+body {
+  font-family: "Kosugi Maru" !important;
+}
+
+.container {
+  text-align: center;
+}
+
+.btn-bigger {
+  font-size: 42pt !important;
+  font-weight: bold;
+  width: 640px;
+  height: 480px;
+
+  margin: 10px 10px;
+}
