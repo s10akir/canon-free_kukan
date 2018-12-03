@@ -13,4 +13,8 @@
     \-
     = f.text_field 'id_4', size: 4, maxlength: 4
 
-= button_tag '会員登録がお済みでないお客様はこちら', class: 'btn btn-success'
+= button_tag '会員登録がお済みでないお客様はこちら', class: 'btn btn-success', id: 'sign-up'
+:coffee
+  $('#sign-up').on 'click', ->
+    alert('スタッフを呼び出しています。有人カウンターでお待ちください。')
+
