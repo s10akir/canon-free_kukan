@@ -1,2 +1,24 @@
-%h1
+%p
   = "#{@user.last_name} #{@user.first_name}様 ご来店ありがとうございます。"
+  ご希望のルームを選択してください。
+
+  %div.container{class: 'selector-room'}
+    %div.row
+      %div.room-top
+        = image_tag('ex_room.jpg', class: 'img-room-top')
+        %h2.room-header
+          EX Room
+    %div.row
+      %div{class: 'room-sub room-sub-left'}
+        = image_tag('ex_room.jpg', class: 'img-room-small')
+        %h2.room-header
+          DX Room
+      %div{class: 'room-sub room-sub-right'}
+        = image_tag('normal_room.jpg', class: 'img-room-small')
+        %h2.room-header
+          Normal Room
+
+= button_tag '会員情報の変更はこちら', {id: 'change-identify', class: 'btn btn-success'}
+:coffee
+  $('#change-identify').on 'click', ->
+    alert('スタッフをお呼びしています。有人カウンターでお待ちください。')
