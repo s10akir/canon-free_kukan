@@ -14,8 +14,8 @@ class TerminalController < ApplicationController
         redirect_to action: 'pay'
       end
     rescue
-      flash.now[:alert] = '会員カードの読み込みに失敗しました'
-      redirect_to action: 'index', id: id
+      flash[:alert] = '会員カードの読み込みに失敗しました'
+      redirect_to action: 'index'
     end
 
 
