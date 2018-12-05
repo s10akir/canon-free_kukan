@@ -20,10 +20,11 @@
   %div.container{class: 'selector-room'}
     %div.row
       %div.room-top
-        = image_tag('ex_room.jpg', class: 'img-room-top')
-        %h2.room-header
-          EX Room
-          = "#{ex_empty} / #{ex_all}"
+        = link_to new_room_status_path do
+          = image_tag('ex_room.jpg', class: 'img-room-top')
+          %h2.room-header
+            EX Room
+            = "#{ex_empty} / #{ex_all}"
     %div.row
       %div{class: 'room-sub room-sub-left'}
         = image_tag('ex_room.jpg', class: 'img-room-small')

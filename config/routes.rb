@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   get '/', to: 'terminal#index'
   get '/terminal', to: 'terminal#index'
   post '/terminal/login', to: 'terminal#login'
+
+  get '/terminal/pay', to: 'terminal#pay'
 end
