@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# dummy User
 User.create(last_name: '奈津',
             first_name: '恵',
             sex: 1,
@@ -14,3 +15,20 @@ User.create(last_name: '奈津',
             address: '木組みの家と石畳の街３−２−１',
             comment: '前回ご来店時に筆箱をお忘れです。レジ横ストレージからお渡ししてください',
             blacklist: false)
+
+
+# Room initialize
+15.times do
+  Room.create(room_type: 0,
+              status: 0)
+end
+
+5.times do
+  Room.create(room_type: 1,
+              status: 0)
+end
+
+3.times do
+  Room.create(room_type: 2,
+              status: 0)
+end

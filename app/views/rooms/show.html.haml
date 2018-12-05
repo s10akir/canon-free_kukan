@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Room_type:
+  = @room.room_type
+%p
+  %b Status:
+  = @room.status
+
+= link_to 'Edit', edit_room_path(@room)
+\|
+= link_to 'Back', rooms_path
