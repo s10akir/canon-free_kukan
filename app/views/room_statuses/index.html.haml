@@ -1,0 +1,25 @@
+%h1 Listing room_statuses
+
+%table
+  %thead
+    %tr
+      %th Room
+      %th User
+      %th Status
+      %th
+      %th
+      %th
+
+  %tbody
+    - @room_statuses.each do |room_status|
+      %tr
+        %td= room_status.room_id
+        %td= room_status.user_id
+        %td= room_status.status
+        %td= link_to 'Show', room_status
+        %td= link_to 'Edit', edit_room_status_path(room_status)
+        %td= link_to 'Destroy', room_status, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Room status', new_room_status_path
