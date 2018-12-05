@@ -12,5 +12,9 @@ class TerminalController < ApplicationController
       flash.now[:alert] = '会員カードの読み込みに失敗しました'
       redirect_to action: 'index'
     end
+
+    @normal_rooms = Room.where(room_type: 0)
+    @dx_rooms = Room.where(room_type: 1)
+    @ex_rooms = Room.where(room_type: 2)
   end
 end

@@ -1,3 +1,18 @@
+- normal_all = @normal_rooms.size
+- normal_empty = 0
+- @normal_rooms.each do |normal_room|
+  - normal_empty += 1 if normal_room.status == 0
+
+- dx_all = @dx_rooms.size
+- dx_empty = 0
+- @dx_rooms.each do |room|
+  - dx_empty += 1 if room.status == 0
+
+- ex_all = @ex_rooms.size
+- ex_empty = 0
+- @ex_rooms.each do |room|
+  - ex_empty += 1 if room.status == 0
+
 %p
   = "#{@user.last_name} #{@user.first_name}様 ご来店ありがとうございます。"
   ご希望のルームを選択してください。
@@ -8,15 +23,18 @@
         = image_tag('ex_room.jpg', class: 'img-room-top')
         %h2.room-header
           EX Room
+          = "#{ex_empty} / #{ex_all}"
     %div.row
       %div{class: 'room-sub room-sub-left'}
         = image_tag('ex_room.jpg', class: 'img-room-small')
         %h2.room-header
           DX Room
+          = "#{dx_empty} / #{dx_all}"
       %div{class: 'room-sub room-sub-right'}
         = image_tag('normal_room.jpg', class: 'img-room-small')
         %h2.room-header
           Normal Room
+          = "#{normal_empty} / #{normal_all}"
 
 = button_tag '会員情報の変更はこちら', {id: 'change-identify', class: 'btn btn-success'}
 :coffee
