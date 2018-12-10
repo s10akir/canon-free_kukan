@@ -2,4 +2,6 @@
   - user = flash[:user]
   = "#{user['last_name']} #{user['first_name']}さん、お帰りですか？"
 
-= button_tag 'お支払い', class: 'btn btn-danger btn-bigger'
+- room_status = flash[:room_status]
+
+= button_to 'お支払い', room_statuses_path(room_status: {user_id: user['id'], room_id: room_status['room_id'], status: 0}), class: 'btn btn-danger btn-bigger'

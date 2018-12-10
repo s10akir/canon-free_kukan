@@ -20,7 +20,7 @@
   %div.container{class: 'selector-room'}
     %div.row
       %div.room-top
-        = link_to new_room_status_path do
+        = link_to room_statuses_path(room_status: {user_id: @user.id, room_id: 1, status: 1}), method: 'post' do
           = image_tag('ex_room.jpg', class: 'img-room-top')
           %h2.room-header
             EX Room

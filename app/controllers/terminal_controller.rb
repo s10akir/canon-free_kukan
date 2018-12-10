@@ -9,8 +9,10 @@ class TerminalController < ApplicationController
       id = params['id_1'].to_i * 1_000_000_000_000 + params['id_2'].to_i * 100_000_000 + params['id_3'].to_i * 10_000 + params['id_4'].to_i
       @user = User.find(id)
 
-      if RoomStatus.where(user_id: 1).last.status == 1
+      room_status = RoomStatus.where(user_id: id).last
+      if room_status.status == 1
         flash[:user] = @user
+        flash[:room_status] = room_status
         redirect_to action: 'pay'
       end
     rescue

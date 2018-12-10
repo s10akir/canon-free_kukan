@@ -1,15 +1,9 @@
-%p#notice= notice
+%p
+  - if @room_status.status == 1
+    = "#{@room_status.room_id}番の部屋をご利用ください"
+  - else
+    ご利用ありがとうございました。
+    %br
+    またのご来店をお待ちしております。
 
-%p
-  %b Room:
-  = @room_status.room_id
-%p
-  %b User:
-  = @room_status.user_id
-%p
-  %b Status:
-  = @room_status.status
-
-= link_to 'Edit', edit_room_status_path(@room_status)
-\|
-= link_to 'Back', room_statuses_path
+= button_to '終了', terminal_path, class: 'btn btn-success btn-bigger', method: 'get'
